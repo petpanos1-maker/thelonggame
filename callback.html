@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>The Long Game — σύνδεση</title>
+<style>
+  body{margin:0;background:#0d0f12;color:#e8e4da;font-family:Helvetica,Arial,sans-serif;
+       display:flex;min-height:100vh;align-items:center;justify-content:center}
+  main{text-align:center;padding:2rem;max-width:36rem}
+  code{display:block;background:#1a1d22;border:1px solid #c9a24b;border-radius:6px;
+       padding:1rem;margin:1rem 0;font-size:1rem;word-break:break-all;color:#c9a24b}
+  button{padding:.6rem 1.4rem;border:0;border-radius:4px;background:#c9a24b;
+         color:#0d0f12;font-size:1rem;cursor:pointer}
+  p{color:#b8b2a4;font-size:.9rem;line-height:1.5}
+</style>
+</head>
+<body>
+<main>
+  <h2>Κωδικός σύνδεσης TikTok</h2>
+  <code id="k">…</code>
+  <button onclick="navigator.clipboard.writeText(document.getElementById('k').textContent)">Αντιγραφή</button>
+  <p>Επικόλλησέ τον στο τερμινάλ που περιμένει. Ο κωδικός δεν φεύγει από
+  αυτή τη σελίδα — δεν στέλνεται πουθενά, απλώς εμφανίζεται εδώ. Ισχύει
+  για λίγα λεπτά και είναι άχρηστος χωρίς το μυστικό της εφαρμογής.</p>
+  <script>
+    const p = new URLSearchParams(location.search);
+    document.getElementById("k").textContent = p.get("code") || "(δεν βρέθηκε ?code στο URL)";
+  </script>
+</main>
+</body>
+</html>
